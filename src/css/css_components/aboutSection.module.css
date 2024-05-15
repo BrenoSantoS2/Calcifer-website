@@ -1,0 +1,35 @@
+.text_layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+.about_section {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    height: 375px;
+    width: 100%;
+    padding: 64px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 0;
+}
+
+.text_position {
+    position: relative;
+    top: 10px;
+}
+
+.white{
+    background-color: white;
+}
