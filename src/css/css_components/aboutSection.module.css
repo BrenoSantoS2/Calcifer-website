@@ -10,7 +10,7 @@
     background-color: rgb(255, 255, 255);
     display: flex;
     height: 375px;
-    width: 100%;
+    width: auto;
     padding: 64px;
     justify-content: center;
     align-items: center;

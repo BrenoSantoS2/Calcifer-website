@@ -1,0 +1,63 @@
+.topic {
+    border-radius: 999px;
+    background: #DEDEDE;
+    display: flex;
+    padding: 8px 29px;
+    justify-content: center;
+    align-items: center;
+}
+
+.topics {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.game_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.game {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    position: relative;
+    top :400px
+}
+
+.video_filter {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(38, 38, 38, 0.60);
+    z-index: -1;
+  }
+.video_background {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -2;
+  }
+
+.white {
+    color: white;
+}
+
+.project_section {
+    height: 600px;
+    padding: 0 64px;
+}
