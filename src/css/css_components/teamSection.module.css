@@ -8,7 +8,8 @@
 
 .cards{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 64px;
     align-items: center;
     align-self: stretch;
 }

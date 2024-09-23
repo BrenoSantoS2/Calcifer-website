@@ -1,12 +1,11 @@
-/* navbar.module.css */
-
 /* Navbar styles */
 .navbar {
     display: flex;
-    max-width: 1200px;
     padding: 32px 64px;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px; /* Limita o tamanho da navbar em telas grandes */
+    margin: 0 auto; /* Centraliza a navbar em telas maiores */
 }
 
 .navbar_anchors {
@@ -22,7 +21,30 @@
     color: var(--Primary-Color, #EE9E3F);
     font-family: Inter;
     font-size: 24px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 16px; /* Reduz o padding em telas pequenas */
+        padding-top:32px ;
+        justify-content: center; /* Centraliza a logo */
+    }
+
+    .navbar_anchors {
+        display: none; /* Esconde os links em telas pequenas */
+    }
+}
+
+/* Media Query para telas muito grandes (ultra-wide) */
+@media (min-width: 1600px) {
+    .navbar {
+        max-width: 1400px; /* Limita ainda mais o tamanho da navbar em telas muito grandes */
+    }
+
+    .navbar_anchors {
+        gap: 32px; /* Aumenta um pouco o espaçamento dos links */
+    }
 }

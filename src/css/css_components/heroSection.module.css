@@ -1,35 +1,78 @@
+/* Layout do texto */
 .text_layout {
-    margin: 64px;
-    max-width: 550px;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+  margin: 64px;
+  padding-top: 100px;
+  max-width: 550px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 
-.text_layout h1{
-    margin-bottom: 0px;
+.text_layout h1 {
+  margin-bottom: 0px;
+  font-size: 3rem; /* Tamanho padrão do título */
 }
 
 .text_color {
-    color: var(--White, #FFF); ;
-  }
+  color: var(--White, #FFF);
+}
 
 .video_filter {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(38, 38, 38, 0.60);
-    z-index: -3;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(38, 38, 38, 0.60);
+  z-index: -3;
+}
+
 .video_background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    z-index: -4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: -4;
+}
+
+/* Media Queries para responsividade */
+
+/* Telas pequenas (celulares e tablets) */
+@media (max-width: 768px) {
+  .text_layout {
+    padding-top: 50px;
+      margin: 24px; /* Reduz margem em telas pequenas */
+      max-width: 400px; /* Permite que o texto ocupe mais espaço horizontal */
   }
+
+  .text_layout h1 {
+      font-size: 2rem; /* Reduz o tamanho do título para telas pequenas */
+  }
+
+  .text_layout p {
+      font-size: 1rem; /* Ajusta o tamanho do parágrafo para legibilidade */
+      line-height: 1.5; /* Melhora a legibilidade */
+  }
+}
+
+/* Telas muito grandes (ultra-wide) */
+@media (min-width: 1600px) {
+  .text_layout {
+      max-width: 700px !important; /* Força o uso do max-width em telas grandes */
+      margin: 80px auto; /* Centraliza e aumenta o espaçamento em telas grandes */
+      padding: 0 100px; /* Adiciona padding lateral em telas ultra-wide */
+  }
+
+  .text_layout h1 {
+      font-size: 4rem; /* Aumenta o tamanho do título em telas ultra-wide */
+  }
+
+  .text_layout p {
+      font-size: 1.5rem; /* Aumenta o tamanho do parágrafo para telas maiores */
+      line-height: 1.2; /* Ajusta o espaçamento entre linhas */
+  }
+}
+

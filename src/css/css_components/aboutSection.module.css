@@ -1,35 +1,70 @@
-.text_layout {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0px;
-}
-
 .about_section {
     background-color: rgb(255, 255, 255);
     display: flex;
-    height: 375px;
-    width: auto;
+    min-height: 100%;
     padding: 64px;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    align-self: stretch;
     box-sizing: border-box;
 }
-
 .content {
+    min-width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    flex: 1 0 0;
+}
+
+.text_layout {
+    margin: 64px;
+    padding-top: 100px; /* Mantém o padding superior */
+    max-width: 550px; /* Tamanho máximo padrão */
+    display: flex; /* Muda para flex para manter a organização */
+    flex-direction: column;
+    align-items: flex-start; /* Alinha à esquerda */
+    gap: 16px; /* Espaçamento entre elementos */
 }
 
 .text_position {
     position: relative;
     top: 10px;
+    max-width: 450px;
+    padding: 0 20px; /* Adiciona padding lateral ao texto */
 }
 
-.white{
-    background-color: white;
+@media (max-width: 1000px) {
+    .content{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .text_position {
+        max-width: 100%;
+        padding: 0px;
+    }
+}
+/* Telas pequenas (celulares e tablets) */
+@media (max-width: 768px) {
+    .about_section {
+        padding: 24px 48px; /* Reduz o padding em telas pequenas */
+        min-height: 300px; /* Ajusta a altura mínima */
+    }
+
+    .text_layout {
+        padding-top: 50px; /* Reduz padding superior */
+        margin: 24px; /* Reduz margem em telas pequenas */
+        max-width: 400px; /* Permite que o texto ocupe mais espaço horizontal */
+    }
+}
+
+/* Telas muito grandes (ultra-wide) */
+@media (min-width: 1600px) {
+    .about_section {
+        padding: 80px; /* Aumenta o padding em telas grandes */
+    }
+
+    .text_layout {
+        max-width: 700px; /* Força o uso do max-width em telas grandes */
+        margin: 80px auto; /* Centraliza e aumenta o espaçamento em telas grandes */
+        padding: 0 100px; /* Adiciona padding lateral em telas ultra-wide */
+    }
 }
