@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer>
       <div className={Styles.footer}>
-            <h3 className={Styles.text}>© 2024 Calcifer Studios. All rights reserved.</h3>
+            <p className={Styles.text}>© 2024 Calcifer Studios. All rights reserved.</p>
         </div>
     </footer>
     );

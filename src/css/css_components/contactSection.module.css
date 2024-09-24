@@ -32,4 +32,16 @@
 .image {
     position: absolute;
     right: 75px;
+    z-index: -1;
+}
+
+@media (max-width: 768px){
+    .contactSection{
+        height: 100%;
+        padding: 48px 32px;
+        background-color: white;
+    }
+    .image{
+        display: none;
+    }
 }
