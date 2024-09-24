@@ -11,7 +11,6 @@
 
 .text_layout h1 {
   margin-bottom: 0px;
-  font-size: 3rem; /* Tamanho padrão do título */
 }
 
 .text_color {
@@ -44,16 +43,11 @@
 @media (max-width: 768px) {
   .text_layout {
     padding-top: 50px;
-      margin: 24px; /* Reduz margem em telas pequenas */
+      margin: 32px; /* Reduz margem em telas pequenas */
       max-width: 400px; /* Permite que o texto ocupe mais espaço horizontal */
   }
 
-  .text_layout h1 {
-      font-size: 2rem; /* Reduz o tamanho do título para telas pequenas */
-  }
-
   .text_layout p {
-      font-size: 1rem; /* Ajusta o tamanho do parágrafo para legibilidade */
       line-height: 1.5; /* Melhora a legibilidade */
   }
 }

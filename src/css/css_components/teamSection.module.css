@@ -6,25 +6,32 @@
     align-self: stretch;
 }
 
-.cards{
+.cards {
     display: flex;
-    justify-content: center;
-    gap: 64px;
+    justify-content: center; /* Alinha os cards ao centro */
+    gap: 64px; /* Espaçamento entre os cards */
     align-items: center;
     align-self: stretch;
+    overflow-x: auto; /* Permite rolar horizontalmente */
+    scroll-behavior: smooth; /* Rolagem suave */
+    padding-left: calc(50vw - 200px - 32px); /* Ajusta o espaçamento à esquerda para centralizar o primeiro card */
 }
 
-.image{
+.cards::-webkit-scrollbar {
+    display: none;
+}
+
+.image {
     display: flex;
     width: 200px;
     height: 200px;
     justify-content: center;
     align-items: center;
-    background-color: #F55555;
+    background-color: #f55555;
     border-radius: 30px;
 }
 
-.h2{
+.h2 {
     color: #000;
 
     font-family: Inter;
@@ -42,10 +49,9 @@
     font-style: normal;
     font-weight: 200;
     line-height: normal;
-    
 }
 
-.media{
+.media {
     display: flex;
     align-items: flex-start;
     gap: 8px;
@@ -53,13 +59,13 @@
 
 .teamSection {
     display: flex;
-    height: 550px;
+    height: 100%;
     padding: 64px;
     flex-direction: column;
     align-items: center;
-    gap: 29px;
+    gap: 25px;
     align-self: stretch;
-    background: #EE9E3F;
+    background: #ee9e3f;
 }
 
 .text_center {
@@ -69,4 +75,35 @@
 .button {
     background-color: transparent;
     border: none;
+}
+.chevrons {
+    display: flex;
+    padding-top: 16px;
+    gap: 32px;
+}
+.chevrons button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    scale: 1.5;
+}
+
+.chevrons button:first-child img {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 425px){
+    .media{
+        justify-content: center;
+    }
+    .teamSection{
+        padding: 32px;
+    }
+}
+
+@media (max-width: 370px){
+    .image{
+        width: 150px;
+        height: 150px;
+    }
 }

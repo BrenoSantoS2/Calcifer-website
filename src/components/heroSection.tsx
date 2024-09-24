@@ -4,7 +4,7 @@ import "../css/style.css"
 
 export function HeroSection() {
     return (
-        <section>
+        <section className={Styles.section}>
                     <div>
                         <div className={Styles.video_filter}></div>
                         <video autoPlay muted loop className={Styles.video_background}>

@@ -45,7 +45,7 @@
 /* Telas pequenas (celulares e tablets) */
 @media (max-width: 768px) {
     .about_section {
-        padding: 24px 48px; /* Reduz o padding em telas pequenas */
+        padding: 48px 32px; /* Reduz o padding em telas pequenas */
         min-height: 300px; /* Ajusta a altura mínima */
     }
 
@@ -66,5 +66,9 @@
         max-width: 700px; /* Força o uso do max-width em telas grandes */
         margin: 80px auto; /* Centraliza e aumenta o espaçamento em telas grandes */
         padding: 0 100px; /* Adiciona padding lateral em telas ultra-wide */
+    }
+    .text_position{
+        max-width: 700px;
+        padding: 0px;
     }
 }

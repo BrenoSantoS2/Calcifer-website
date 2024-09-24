@@ -33,6 +33,7 @@
     align-items: center;
     align-self: stretch;
     position: relative;
+    gap: 40px;
     top :400px
 }
 
@@ -51,13 +52,100 @@
     height: 100%;
     object-fit: cover; 
     z-index: -2;
+    max-height: 600px;
   }
 
-.white {
+.text_white{
+    max-width: 600px;
+    color: white;
+}
+
+.title_white{
     color: white;
 }
 
 .project_section {
     height: 600px;
     padding: 0 64px;
+}
+
+@media (max-width: 1200px){
+
+    .title_white{
+        font-size: 2rem;
+    }
+    .text_white{
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 940px){
+
+    .text_white{
+        max-width: 300px;
+    }
+}
+
+
+@media (max-width: 768px){
+    .project_section{
+        padding: 0 32px;
+        height: 400px;
+    }
+
+    .game{
+        top: 250px;
+    }
+
+    .text_white{
+        display: none;
+    }
+    .video_background{
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 425px){
+    .project_section{
+        padding: 0 16px;
+    }
+    .title_white{
+        font-size: 1.7rem;
+    }
+    .topics{
+        font-size: 0.8rem;
+    }
+    .topic{
+        padding: 8px 16px;
+    }
+    .game_info{
+        gap: 5px;
+    }
+    .project_section{
+        height: 300px;
+    }
+    .game{
+        top: 190px;
+    }
+    .video_background{
+        max-height: 300px;
+    }
+
+}
+
+@media (min-width: 1600px){
+    .project_section{
+        padding: 0 32px;
+        height: 650px;
+    }
+
+    .game{
+        top: 400px;
+    }
+    .video_background{
+        max-height: 650px;
+    }
+    .project_section{
+        padding: 0 64px;
+    }
 }
