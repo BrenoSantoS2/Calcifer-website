@@ -3,6 +3,7 @@
 import "../css/style.css";
 import Styles from '../css/css_components/teamSection.module.css'
 import { useRef } from "react";
+import Image from 'next/image'
 
 export function TeamSection() {
 
@@ -47,8 +48,8 @@ export function TeamSection() {
                     <ProfileCard />
                 </div>
                 <div className={Styles.chevrons}>
-                    <button onClick={handleLeftClick}><img src="/chevron.svg" alt="chevron" /></button>
-                    <button onClick={handleRightClick}><img src="/chevron.svg" alt="chevron" /></button>
+                    <button onClick={handleLeftClick}><Image src="/chevron.svg" alt="chevron" width="36" height="36"/></button>
+                    <button onClick={handleRightClick}><Image src="/chevron.svg" alt="chevron" width="36" height="36"/></button>
                 </div>
             </div>
         </section>
@@ -58,12 +59,12 @@ export function TeamSection() {
 export function ProfileCard() {
     return (
         <div>
-            <img src="/time/BrenoSantos.png" alt="" className={Styles.image} />
+            <Image src="/time/BrenoSantos.png" alt="" width="200" height="200" className={Styles.image} />
             <h2 className={Styles.h2}>Breno Santos</h2>
             <p className={Styles.p}>Game Developer / Designer</p>
             <div className={Styles.media}>
-                <button className={Styles.button}><img src="/Linkedin.svg" alt="Linkedin" /></button>
-                <button className={Styles.button}><img src="/Instagram.svg" alt="Instagram" /></button>
+                <button className={Styles.button}><Image src="/Linkedin.svg" alt="Linkedin" width="31" height="30"/></button>
+                <button className={Styles.button}><Image src="/Instagram.svg" alt="Instagram" width="31" height="30"/></button>
             </div>
         </div>
     )

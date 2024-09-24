@@ -85,7 +85,6 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    scale: 1.5;
 }
 
 .chevrons button:first-child img {
