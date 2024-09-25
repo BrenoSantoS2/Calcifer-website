@@ -9,7 +9,7 @@ export function ContactSection() {
             <div className={Styles.contactSection}>
                 <div className={Styles.title}>
                     <h1>Contact Us</h1>
-                    <p>We wold love to hear from you. Contact us for any inquiries.</p>
+                    <p>We&#39;d love to hear from you. Contact us for any inquiries.</p>
                 </div>
 
                 <div className={Styles.contact}>
