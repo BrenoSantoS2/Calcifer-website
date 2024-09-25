@@ -23,7 +23,13 @@
     font-size: 24px;
     font-weight: 400;
     line-height: normal;
+    text-decoration: none;
 }
+  
+  .anchor:hover {
+    color: #ff8838; /* Exemplo de mudança de cor ao passar o mouse */
+  }
+  
 
 /* Media Query para telas menores */
 @media (max-width: 768px) {

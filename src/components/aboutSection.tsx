@@ -3,7 +3,7 @@ import "../css/style.css"
 
 export function AboutSection() {
     return (
-        <section>
+        <section id="about">
             <div>
                 <div className={Styles.about_section}>
                     <div className= {Styles.content}>

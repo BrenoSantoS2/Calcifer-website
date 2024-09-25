@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export function ContactSection() {
     return (
-        <section>
+        <section id="contact">
             <Image src="/Phanthom.png" alt="" width="557" height="372" className={Styles.image}/>
             <div className={Styles.contactSection}>
                 <div className={Styles.title}>

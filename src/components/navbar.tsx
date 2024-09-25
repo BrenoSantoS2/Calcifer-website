@@ -1,5 +1,5 @@
 // Navbar.tsx
-import Image from 'next/image'
+import Image from 'next/image';
 import React from "react";
 import styles from "../css/css_components/navbar.module.css";
 
@@ -11,9 +11,9 @@ export function NavBar() {
                 <Image src="/CalciferLogo.svg" alt="Calcifer_Studios_logo" width="204" height="63"/>
             </div>
             <div className={styles.navbar_anchors}>
-                <p className={styles.anchor}>Games</p> 
-                <p className={styles.anchor}>About</p> 
-                <p className={styles.anchor}>Contact</p>
+                <a href="#games" className={styles.anchor}>Games</a>
+                <a href="#about" className={styles.anchor}>About</a>
+                <a href="#contact" className={styles.anchor}>Contact</a>
             </div>
         </div>
     </nav>

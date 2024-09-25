@@ -3,7 +3,7 @@ import Styles from '../css/css_components/projectSection.module.css';
 
 export function ProjectSection() {
     return (
-        <section>
+        <section id="games">
             <div className={Styles.project_section}>
                 <div>
                     <div className={Styles.video_filter}></div>
