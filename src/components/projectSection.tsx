@@ -22,7 +22,7 @@ export function ProjectSection() {
                         </div>
                     </div>
 
-                    <p className={Styles.text_white}>Falling in Abyss brings Dante's Inferno to life in a way never seen before, immersing the player in deep reflections, epic battles, and breathtaking landscapes alongside their character, where decisions will directly influence their fate.</p>
+                    <p className={Styles.text_white}>Falling in Abyss brings Dante&#39;s Inferno to life in a way never seen before, immersing the player in deep reflections, epic battles, and breathtaking landscapes alongside their character, where decisions will directly influence their fate.</p>
                 </div>
             </div>
         </section>
