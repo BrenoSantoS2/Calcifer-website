@@ -31,49 +31,49 @@ export function TeamSection() {
             role: 'Founder / Game Director',
             imageSrc: '/time/BrenoSantos.png',
             linkedinUrl: 'https://www.linkedin.com/in/breno-santos-0843131b8/',
-            instagramUrl: 'https://www.instagram.com/breno_santos'
+            instagramUrl: 'https://www.instagram.com/brenosantos_g/'
         },
         {
             name: 'Lucas Ramenzoni',
             role: 'Game Developer',
             imageSrc: '/time/LucasJorge.png',
             linkedinUrl: 'https://www.linkedin.com/in/lucas-ramenzoni-jorge-083770302/',
-            instagramUrl: 'https://www.instagram.com/exemplo'
+            instagramUrl: 'https://www.instagram.com/lucas.rjorge/'
         },
         {
             name: 'Cibele Leal',
             role: 'Narrative Designer',
             imageSrc: '/time/CibeleLeal.png',
             linkedinUrl: 'https://www.linkedin.com/in/cibele-leal/',
-            instagramUrl: 'https://www.instagram.com/exemplo'
+            instagramUrl: 'https://www.instagram.com/clea.figueredo/'
         },
         {
             name: 'João Victor',
             role: 'Game Developer / Sound Designer',
             imageSrc: '/time/JoaoVictor.png',
             linkedinUrl: 'https://www.linkedin.com/in/joão-v-wandermurem/',
-            instagramUrl: 'https://www.instagram.com/exemplo'
+            instagramUrl: 'https://www.instagram.com/wandermuremjoao/'
         },
         {
             name: 'João Carbone',
             role: 'Game Developer/ Game Designer',
             imageSrc: '/time/JoaoCarbone.png',
             linkedinUrl: 'https://www.linkedin.com/in/joao-carbone/',
-            instagramUrl: 'https://www.instagram.com/exemplo'
+            instagramUrl: ''
         },
         {
             name: 'Leonardo Ogata',
             role: 'Narrative Designer / Game Designer',
             imageSrc: '/time/LeonardoOgata.png',
             linkedinUrl: 'https://www.linkedin.com/in/leonardo-ogata-983b032b5/',
-            instagramUrl: 'https://www.instagram.com/exemplo'
+            instagramUrl: 'https://www.instagram.com/leonardo_ogata/'
         },
         {
             name: 'Leandro Santos',
             role: 'Game Developer',
             imageSrc: '/time/LeandroSantos.png',
             linkedinUrl: 'https://www.linkedin.com/in/leandro-dos-santos-gomes/',
-            instagramUrl: 'https://www.instagram.com/exemplo'
+            instagramUrl: 'https://www.instagram.com/leandro_dsag/'
         },
         // Adicione mais membros do time aqui
     ];
