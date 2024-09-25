@@ -9,7 +9,7 @@ export function ContactSection() {
             <div className={Styles.contactSection}>
                 <div className={Styles.title}>
                     <h1>Contact Us</h1>
-                    <p>We&#39d love to hear from you. Contact us for any inquiries.</p>
+                    <p>We wold love to hear from you. Contact us for any inquiries.</p>
                 </div>
 
                 <div className={Styles.contact}>
@@ -17,7 +17,7 @@ export function ContactSection() {
                         <Image src="/Email.svg" alt="Email" width="30" height="23"/>
                         <h2>Email</h2>
                     </div>
-                    <p>hello@calciferstudios.com</p>
+                    <p>calcifer.studios.ofc@gmail.com</p>
                 </div>
 
                 <div className={Styles.contact}>
@@ -25,7 +25,7 @@ export function ContactSection() {
                         <Image src="/Telephone.svg" alt="Telephone " width="30" height="23"/>
                         <h2>Phone</h2>
                     </div>
-                    <p>+1 (555) 123-4567</p>
+                    <p>+55 (31) 98508-0635</p>
                 </div>
 
             </div>
