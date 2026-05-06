@@ -87,14 +87,19 @@
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   cursor: pointer;
   opacity: 0.85;
   transition: opacity 200ms ease;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .scroll_indicator:hover {
@@ -103,12 +108,13 @@
 
 .scroll_chevron {
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
   transform: rotate(45deg);
-  animation: scroll_bounce 1.8s ease-in-out infinite;
+  animation: scroll_bounce 2s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 @keyframes scroll_bounce {

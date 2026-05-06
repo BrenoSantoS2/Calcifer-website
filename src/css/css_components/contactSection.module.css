@@ -10,6 +10,8 @@
 }
 
 .contactSection {
+    position: relative;
+    z-index: 1; /* Garante que o texto fique ACIMA do fantasma */
     max-width: var(--container-max);
     width: 100%;
     margin: 0 auto;
@@ -48,8 +50,8 @@
 .image {
     position: absolute;
     right: 75px;
-    z-index: 0;
-    animation: phantom_float 4s ease-in-out infinite;
+    z-index: 0; /* Fantasma fica na camada de fundo */
+    pointer-events: none;
 }
 
 @keyframes phantom_float {

@@ -7,7 +7,7 @@
     "games": "Jogos",
     "about": "Sobre",
     "contact": "Contato",
-    "logoAlt": "Logo da Calcifire Studios",
+    "logoAlt": "Calcifire Studios logo",
     "openMenu": "Abrir menu",
     "closeMenu": "Fechar menu",
     "selectLanguage": "Selecionar idioma"
@@ -19,25 +19,32 @@
   "about": {
     "kicker": "Sobre Nós",
     "title": "Criando jogos que inspiram e entretêm",
-    "body": "A Calcifire Studios é um estúdio de jogos fundado por estudantes universitários com a missão de criar jogos cativantes e inovadores que tragam alegria a jogadores ao redor do mundo. Acreditamos no poder dos jogos para inspirar e entreter, e somos dedicados a entregar experiências únicas e imersivas."
+    "body": "A Calcifire Studios é um estúdio de jogos fundado por estudantes universitários com a missão de criar jogos cativantes e inovadores que trazem alegria aos jogadores de todo o mundo. Acreditamos no poder dos jogos para inspirar e entreter, e estamos dedicados a entregar experiências únicas e imersivas."
   },
   "project": {
-    "title": "Falling in Abyss",
+    "title1": "Fome",
+    "body1": "Vencedor da HUG JAM 3, 'Fome' te mergulha nas noites frias e implacáveis de São Paulo. Na pele de alguém que vive nas ruas, sua missão é simples, porém brutal: sobreviver.",
+    "title2": "Project Samaruk",
+    "body2": "Descubra os segredos de uma mente presa em um coma psicogênico. Aqui você é o Guerreiro da consciência navegando pelo subconsciente para confrontar Criaturas Sombrias e superar traumas do passado.",
+    "title3": "Falling in Abyss",
+    "body3": "Falling in Abyss traz o Inferno de Dante à vida de uma forma nunca vista antes, mergulhando o jogador em reflexões profundas, batalhas épicas e paisagens de tirar o fôlego ao lado de seu personagem, onde as decisões influenciarão diretamente seu destino.",
+    "tagInDevelopment": "Em Desenvolvimento",
+    "tagBacklog": "No Backlog",
     "tagAction": "Ação",
     "tagMetroidvania": "MetroidVania",
-    "body": "Falling in Abyss traz o Inferno de Dante à vida de uma forma nunca vista antes, mergulhando o jogador em reflexões profundas, batalhas épicas e paisagens de tirar o fôlego ao lado de seu personagem, onde as decisões influenciarão diretamente seu destino."
+    "tagSideScroller": "Side Scroller"
   },
   "team": {
-    "title": "Conheça nosso time",
+    "title": "Conheça Nosso Time",
     "body": "Conheça os talentosos estudantes universitários por trás da Calcifire Studios.",
     "prevSlide": "Membro anterior",
     "nextSlide": "Próximo membro",
-    "dotLabel": "Ir para slide {n}"
+    "dotLabel": "Ir para o slide {n}"
   },
   "contact": {
-    "title": "Fale conosco",
-    "body": "Adoraríamos ouvir você. Entre em contato para qualquer dúvida.",
-    "email": "E-mail",
+    "title": "Entre em Contato",
+    "body": "Gostaríamos de ouvir de você. Entre em contato conosco para qualquer dúvida.",
+    "email": "Email",
     "phone": "Telefone"
   },
   "footer": {

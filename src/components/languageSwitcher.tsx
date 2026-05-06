@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "../i18n/navigation";
@@ -7,9 +8,9 @@ import { routing } from "../i18n/routing";
 import Styles from "../css/css_components/languageSwitcher.module.css";
 
 const LOCALE_META: Record<string, { flag: string; label: string }> = {
-    pt: { flag: '🇧🇷', label: 'PT' },
-    en: { flag: '🇺🇸', label: 'EN' },
-    es: { flag: '🇪🇸', label: 'ES' },
+    pt: { flag: '/countries/pt.svg', label: 'PT' },
+    en: { flag: '/countries/en.svg', label: 'EN' },
+    es: { flag: '/countries/es.svg', label: 'ES' },
 };
 
 type Props = {
@@ -72,7 +73,9 @@ export function LanguageSwitcher({ variant = 'desktop' }: Props) {
                 aria-label={tNav("selectLanguage")}
                 onClick={() => setIsOpen((v) => !v)}
             >
-                <span className={Styles.flag}>{current.flag}</span>
+                <span className={Styles.flag}>
+                    <Image src={current.flag} alt="" width="20" height="15" className={Styles.flagImage} />
+                </span>
                 <span className={Styles.label}>{current.label}</span>
                 <span className={Styles.chevron} aria-hidden="true">▾</span>
             </button>
@@ -90,7 +93,9 @@ export function LanguageSwitcher({ variant = 'desktop' }: Props) {
                                     className={`${Styles.item} ${isActive ? Styles.itemActive : ''}`}
                                     onClick={() => handleSelect(loc)}
                                 >
-                                    <span className={Styles.flag}>{meta.flag}</span>
+                                    <span className={Styles.flag}>
+                                        <Image src={meta.flag} alt="" width="20" height="15" className={Styles.flagImage} />
+                                    </span>
                                     <span className={Styles.label}>{meta.label}</span>
                                 </button>
                             </li>

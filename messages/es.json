@@ -14,7 +14,7 @@
   },
   "hero": {
     "title": "Liberando creatividad y pasión en cada proyecto",
-    "body": "Bienvenido al mundo inmersivo de Calcifire Studios, donde los sueños de los videojuegos se hacen realidad. Únete a nosotros en una aventura épica llena de emoción, desafíos y posibilidades infinitas."
+    "body": "Bienvenido al mundo inmersivo de Calcifire Studios, donde os sonhos dos jogos se tornam realidade. Únete a nosotros en una aventura épica llena de emoción, desafíos y posibilidades infinitas."
   },
   "about": {
     "kicker": "Acerca de Nosotros",
@@ -22,10 +22,17 @@
     "body": "Calcifire Studios es un estudio de videojuegos fundado por estudiantes universitarios con la misión de crear juegos cautivadores e innovadores que aporten alegría a jugadores de todo el mundo. Creemos en el poder de los juegos para inspirar y entretener, y estamos dedicados a ofrecer experiencias únicas e inmersivas."
   },
   "project": {
-    "title": "Falling in Abyss",
+    "title1": "Hambre",
+    "body1": "Ganador de HUG JAM 3, 'Hambre' te sumerge en las noches frías e implacables de São Paulo. En la piel de alguien que vive en la calle, tu misión es simple pero brutal: sobrevivir.",
+    "title2": "Project Samaruk",
+    "body2": "Descubre los secretos de una mente atrapada en un coma psicogénico. Aquí eres el Guerrero de la conciencia que navega por el subconsciente para confrontar Criaturas Sombrías e superar los traumas do passado.",
+    "title3": "Falling in Abyss",
+    "body3": "Falling in Abyss trae el Infierno de Dante a la vida de una manera nunca antes vista, sumergiendo al jugador en reflexiones profundas, batallas épicas y paisajes impresionantes junto a su personaje, donde las decisiones influirán directamente en su destino.",
+    "tagInDevelopment": "En desarrollo",
+    "tagBacklog": "En Backlog",
     "tagAction": "Acción",
     "tagMetroidvania": "MetroidVania",
-    "body": "Falling in Abyss trae el Infierno de Dante a la vida de una manera nunca antes vista, sumergiendo al jugador en reflexiones profundas, batallas épicas y paisajes impresionantes junto a su personaje, donde las decisiones influirán directamente en su destino."
+    "tagSideScroller": "Side Scroller"
   },
   "team": {
     "title": "Conoce nuestro equipo",

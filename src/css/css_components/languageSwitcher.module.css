@@ -32,6 +32,13 @@
 .flag {
     font-size: 18px;
     line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.flagImage {
+    border-radius: 2px;
+    object-fit: cover;
 }
 
 .label {

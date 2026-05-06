@@ -22,10 +22,17 @@
     "body": "Calcifire Studios is a game studio founded by university students with a mission to create captivating and innovative games that bring joy to players around the world. We believe in the power of games to inspire and entertain, and we are dedicated to delivering unique and immersive experiences."
   },
   "project": {
-    "title": "Falling in Abyss",
+    "title1": "Hunger",
+    "body1": "Winner of HUG JAM 3, 'Hunger' immerses you in the cold and relentless nights of São Paulo. As someone living on the streets, your mission is simple yet brutal: survive.",
+    "title2": "Project Samaruk",
+    "body2": "Uncover the secrets of a mind trapped in a psychogenic coma. Here you are the Warrior of consciousness navigating through the subconscious to confront Shadow Creatures and overcome past traumas.",
+    "title3": "Falling in Abyss",
+    "body3": "Falling in Abyss brings Dante's Inferno to life in a way never seen before, immersing the player in deep reflections, epic battles, and breathtaking landscapes alongside their character, where decisions will directly influence their fate.",
+    "tagInDevelopment": "In Development",
+    "tagBacklog": "In Backlog",
     "tagAction": "Action",
     "tagMetroidvania": "MetroidVania",
-    "body": "Falling in Abyss brings Dante's Inferno to life in a way never seen before, immersing the player in deep reflections, epic battles, and breathtaking landscapes alongside their character, where decisions will directly influence their fate."
+    "tagSideScroller": "Side Scroller"
   },
   "team": {
     "title": "Meet Our Team",
