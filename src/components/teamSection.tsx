@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { useTranslations } from "next-intl";
 
 const AUTOPLAY_INTERVAL = 5000;
-const CARD_GAP = 64;
+const CARD_GAP = 48;
 
 const teamMembers = [
     {

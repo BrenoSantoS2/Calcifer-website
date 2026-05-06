@@ -12,8 +12,11 @@ const GAMES = [
         videoWebm: "/videos/fomeBg.webm",
         image: "/Phanthom.png", // Usando Phanthom como placeholder já que existe na raiz
         titleKey: "title1",
+        logoAsset: "/fome.gif", // Exemplo de vídeo como logo (mesmo do bg para teste)
+        logoType: "image",
         tagsKeys: ["tagSideScroller"],
-        bodyKey: "body1"
+        bodyKey: "body1",
+        link: "https://yuri7th.itch.io/fome" // Link opcional
     },
     {
         id: "project-samaruk",
@@ -21,7 +24,8 @@ const GAMES = [
         image: "/samaruk.png", 
         titleKey: "title2", 
         tagsKeys: ["tagInDevelopment","tagAction"],
-        bodyKey: "body2"
+        bodyKey: "body2",
+        link: "" // Sem link
     },
     {
         id: "falling-in-abyss",
@@ -29,7 +33,8 @@ const GAMES = [
         image: "/Phanthom.png",
         titleKey: "title3",
         tagsKeys: ["tagBacklog","tagMetroidvania"],
-        bodyKey: "body3"
+        bodyKey: "body3",
+        link: ""
     }
 ];
 
@@ -85,7 +90,33 @@ export function ProjectSection() {
                 <div className={Styles.game_container}>
                     <div className={Styles.game} key={currentIndex}>
                         <div className={Styles.game_info}>
-                            <h1 className={Styles.title_white}>{t(currentGame.titleKey)}</h1>
+                            {currentGame.logoAsset ? (
+                                <div className={Styles.logo_container}>
+                                    {currentGame.logoType === 'video' ? (
+                                        <video 
+                                            autoPlay 
+                                            muted 
+                                            loop 
+                                            playsInline 
+                                            className={Styles.project_logo_video}
+                                        >
+                                            <source src={currentGame.logoAsset} type="video/webm" />
+                                        </video>
+                                    ) : (
+                                        /* Aqui aceita imagens estáticas (png, svg, jpg) e também GIFs */
+                                        <Image 
+                                            src={currentGame.logoAsset} 
+                                            alt={t(currentGame.titleKey)} 
+                                            width={300} 
+                                            height={150} 
+                                            unoptimized={currentGame.logoAsset.endsWith('.gif')}
+                                            className={Styles.project_logo_image}
+                                        />
+                                    )}
+                                </div>
+                            ) : (
+                                <h1 className={Styles.title_white}>{t(currentGame.titleKey)}</h1>
+                            )}
                             <div className={Styles.topics}>
                                 {currentGame.tagsKeys.map(tag => (
                                     <p key={tag} className={Styles.topic}>{t(tag)}</p>
@@ -106,6 +137,18 @@ export function ProjectSection() {
                             <Image src="/chevron.svg" alt="" width="36" height="36" />
                         </button>
                     </div>
+
+                    {currentGame.link && (
+                        <a 
+                            href={currentGame.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className={Styles.project_link}
+                        >
+                            {t("viewProject")}
+                        </a>
+                    )}
+
                     <div className={Styles.dots}>
                         {GAMES.map((_, index) => (
                             <button

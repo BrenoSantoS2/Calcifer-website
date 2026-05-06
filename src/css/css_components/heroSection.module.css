@@ -100,10 +100,17 @@
   border: none;
   outline: none;
   -webkit-tap-highlight-color: transparent;
+  /* Fix for Opera/Chromium rendering glitches */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateX(-50%) translateZ(0);
 }
 
-.scroll_indicator:hover {
+.scroll_indicator:hover,
+.scroll_indicator:focus {
   opacity: 1;
+  outline: none;
+  border: none;
 }
 
 .scroll_chevron {
@@ -115,6 +122,11 @@
   transform: rotate(45deg);
   animation: scroll_bounce 2s ease-in-out infinite;
   will-change: transform, opacity;
+  /* GPU acceleration and sub-pixel fix */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 1px transparent; /* Forces better anti-aliasing */
 }
 
 @keyframes scroll_bounce {

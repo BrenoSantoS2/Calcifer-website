@@ -32,30 +32,24 @@
     scroll-snap-type: x mandatory;
 }
 
-@media (min-width: 1440px) {
-    .cards {
-        justify-content: center;
-    }
-}
-
 @media (max-width: 768px) {
     .cards {
         justify-content: flex-start;
-        gap: 0;
-        padding-inline: 0;
-        scroll-padding-inline: 0;
+        gap: 20px;
+        padding-inline: 24px;
+        scroll-padding-inline: 24px;
     }
 }
 
 .cards > * {
     flex-shrink: 0;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     transition: transform 200ms var(--ease-premium), box-shadow 200ms var(--ease-premium);
 }
 
 @media (max-width: 768px) {
     .cards > * {
-        width: 100%;
+        width: 280px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -75,7 +69,7 @@
     position: relative;
     flex-shrink: 0;
     width: 260px;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     transition: transform 400ms var(--ease-premium);
     margin-top: 60px; /* Compensa o overlap da imagem */
 }

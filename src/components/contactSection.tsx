@@ -31,6 +31,15 @@ export async function ContactSection() {
                     <p>+55 (11) 97106-1168</p>
                 </div>
 
+                <div className={Styles.socials}>
+                    <a href="https://www.linkedin.com/company/calcifer-studios/" target="_blank" rel="noopener noreferrer" className={Styles.social_link}>
+                        <Image src="/Linkedin.svg" alt="Linkedin" width="30" height="30"/>
+                    </a>
+                    <a href="https://www.instagram.com/calciferstudios/" target="_blank" rel="noopener noreferrer" className={Styles.social_link}>
+                        <Image src="/Instagram.svg" alt="Instagram" width="30" height="30"/>
+                    </a>
+                </div>
+
             </div>
         </section>
     )

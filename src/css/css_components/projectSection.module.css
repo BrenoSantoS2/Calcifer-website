@@ -111,6 +111,23 @@
     margin: 0;
 }
 
+.logo_container {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.project_logo_video,
+.project_logo_image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+}
+
 .topics {
     display: flex;
     align-items: center;
@@ -138,6 +155,27 @@
     max-width: 450px;
     flex: 1;
     margin: 0;
+    margin-bottom: 24px;
+}
+
+.project_link {
+    display: inline-block;
+    padding: 12px 32px;
+    background: #ee9e3f;
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 300ms ease;
+    white-space: nowrap;
+}
+
+.project_link:hover {
+    background: #fff;
+    transform: translateY(-2px);
 }
 
 /* Controls */
@@ -159,6 +197,7 @@
 .chevrons {
     display: flex;
     gap: 24px;
+    flex: 1;
 }
 
 .chevrons button {
@@ -187,6 +226,8 @@
 .dots {
     display: flex;
     gap: 12px;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .dot {
@@ -238,5 +279,9 @@
     .controls {
         padding-inline: 24px; /* Forçando padding fixo em mobile */
         bottom: 40px;
+    }
+    .project_link {
+        padding: 10px 20px;
+        font-size: 12px;
     }
 }

@@ -47,6 +47,22 @@
     gap: 10px;
 }
 
+.socials {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social_link {
+    transition: transform 300ms ease, opacity 300ms ease;
+    opacity: 0.8;
+}
+
+.social_link:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
 .image {
     position: absolute;
     right: 75px;
