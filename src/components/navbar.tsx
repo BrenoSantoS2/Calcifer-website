@@ -88,22 +88,25 @@ export function NavBar() {
             </button>
 
             {isMobileMenuOpen && (
-                <div className={Styles.mobile_panel} role="dialog" aria-modal="true">
-                    <ul className={Styles.mobile_links}>
-                        <li>
-                            <a href="#games" className={Styles.mobile_link} onClick={() => setIsMobileMenuOpen(false)}>{t("games")}</a>
-                        </li>
-                        <li>
-                            <a href="#about" className={Styles.mobile_link} onClick={() => setIsMobileMenuOpen(false)}>{t("about")}</a>
-                        </li>
-                        <li>
-                            <a href="#contact" className={Styles.mobile_link} onClick={() => setIsMobileMenuOpen(false)}>{t("contact")}</a>
-                        </li>
-                    </ul>
-                    <div className={Styles.mobile_switcher}>
-                        <LanguageSwitcher variant="mobile" />
+                <>
+                    <div className={Styles.backdrop} onClick={() => setIsMobileMenuOpen(false)} />
+                    <div className={Styles.mobile_panel} role="dialog" aria-modal="true">
+                        <ul className={Styles.mobile_links}>
+                            <li>
+                                <a href="#games" className={Styles.mobile_link} onClick={() => setIsMobileMenuOpen(false)}>{t("games")}</a>
+                            </li>
+                            <li>
+                                <a href="#about" className={Styles.mobile_link} onClick={() => setIsMobileMenuOpen(false)}>{t("about")}</a>
+                            </li>
+                            <li>
+                                <a href="#contact" className={Styles.mobile_link} onClick={() => setIsMobileMenuOpen(false)}>{t("contact")}</a>
+                            </li>
+                        </ul>
+                        <div className={Styles.mobile_switcher}>
+                            <LanguageSwitcher variant="mobile" />
+                        </div>
                     </div>
-                </div>
+                </>
             )}
         </>
     );

@@ -24,6 +24,7 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+    background-color: #000; /* Garante fundo preto consistente em todos os navegadores */
 }
 
 .asset_layer {
@@ -173,6 +174,14 @@
     white-space: nowrap;
 }
 
+.desktop_only_link {
+    display: inline-block;
+}
+
+.mobile_only_link {
+    display: none;
+}
+
 .project_link:hover {
     background: #fff;
     transform: translateY(-2px);
@@ -283,5 +292,28 @@
     .project_link {
         padding: 10px 20px;
         font-size: 12px;
+    }
+    
+    /* Novas regras de responsividade solicitadas */
+    .logo_container {
+        max-width: 200px; /* Logo menor em mobile */
+    }
+    
+    .topic {
+        font-size: 11px; /* Tags menores */
+        padding: 4px 10px;
+    }
+    
+    .desktop_only_link {
+        display: none; /* Esconde o botão do meio dos controles */
+    }
+    
+    .mobile_only_link {
+        display: inline-block; /* Mostra o botão abaixo das tags */
+        margin-top: 10px;
+    }
+
+    .game_info {
+        gap: 12px; /* Menos espaço entre os elementos */
     }
 }

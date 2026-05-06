@@ -29,7 +29,7 @@ const GAMES = [
     },
     {
         id: "falling-in-abyss",
-        videoWebm: "/videos/Bg2Video.webm", // Ajustado para o nome real com CamelCase
+        videoWebm: "", // Ajustado para o nome real com CamelCase
         image: "/Phanthom.png",
         titleKey: "title3",
         tagsKeys: ["tagBacklog","tagMetroidvania"],
@@ -122,6 +122,18 @@ export function ProjectSection() {
                                     <p key={tag} className={Styles.topic}>{t(tag)}</p>
                                 ))}
                             </div>
+
+                            {/* Botão visível apenas em mobile/telas pequenas abaixo das tags */}
+                            {currentGame.link && (
+                                <a 
+                                    href={currentGame.link} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className={`${Styles.project_link} ${Styles.mobile_only_link}`}
+                                >
+                                    {t("viewProject")}
+                                </a>
+                            )}
                         </div>
 
                         <p className={Styles.text_white}>{t(currentGame.bodyKey)}</p>
@@ -143,7 +155,7 @@ export function ProjectSection() {
                             href={currentGame.link} 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className={Styles.project_link}
+                            className={`${Styles.project_link} ${Styles.desktop_only_link}`}
                         >
                             {t("viewProject")}
                         </a>

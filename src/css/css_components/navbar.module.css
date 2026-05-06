@@ -127,39 +127,63 @@
     display: block;
     width: 22px;
     height: 2px;
-    background: #fff;
+    background: var(--Primary-Color, #EE9E3F);
     border-radius: 2px;
-    transition: transform 200ms ease, opacity 200ms ease;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease;
 }
 
 .hamburgerOpen .hamburgerBar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
+    background: #fff; /* Muda para branco quando aberto para contraste no painel escuro */
 }
 .hamburgerOpen .hamburgerBar:nth-child(2) {
     opacity: 0;
 }
 .hamburgerOpen .hamburgerBar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+    background: #fff;
 }
 
-/* Mobile panel */
+/* Mobile panel (Sidebar style) */
 .mobile_panel {
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    max-width: 400px;
     z-index: 105;
-    background: rgba(15, 15, 15, 0.97);
+    background: #141414;
+    border-left: 1px solid rgba(238, 158, 63, 0.2);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    padding: 32px;
-    animation: slideDown 220ms ease;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 48px;
+    padding: 100px 40px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    animation: slideLeft 400ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@keyframes slideDown {
-    from { transform: translateY(-12px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+/* Backdrop for sidebar */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 104;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    animation: fadeIn 300ms ease;
+}
+
+@keyframes slideLeft {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .mobile_links {
@@ -168,20 +192,25 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    align-items: center;
+    gap: 32px;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .mobile_link {
-    color: var(--Primary-Color, #EE9E3F);
+    color: #fff;
     font-family: Inter;
-    font-size: 28px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 600;
     text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 200ms ease, padding-left 200ms ease;
 }
 
 .mobile_link:hover {
-    color: #ff8838;
+    color: var(--Primary-Color, #EE9E3F);
+    padding-left: 8px;
 }
 
 .mobile_switcher {
