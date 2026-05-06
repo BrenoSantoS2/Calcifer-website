@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "title": "Calcifire Studios",
+    "description": "Liberando criatividade e paixão em cada projeto"
+  },
+  "nav": {
+    "games": "Jogos",
+    "about": "Sobre",
+    "contact": "Contato",
+    "logoAlt": "Logo da Calcifire Studios",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "selectLanguage": "Selecionar idioma"
+  },
+  "hero": {
+    "title": "Liberando criatividade e paixão em cada projeto",
+    "body": "Bem-vindo ao mundo imersivo da Calcifire Studios, onde os sonhos dos jogos se tornam realidade. Junte-se a nós em uma aventura épica repleta de emoção, desafios e possibilidades infinitas."
+  },
+  "about": {
+    "kicker": "Sobre Nós",
+    "title": "Criando jogos que inspiram e entretêm",
+    "body": "A Calcifire Studios é um estúdio de jogos fundado por estudantes universitários com a missão de criar jogos cativantes e inovadores que tragam alegria a jogadores ao redor do mundo. Acreditamos no poder dos jogos para inspirar e entreter, e somos dedicados a entregar experiências únicas e imersivas."
+  },
+  "project": {
+    "title": "Falling in Abyss",
+    "tagAction": "Ação",
+    "tagMetroidvania": "MetroidVania",
+    "body": "Falling in Abyss traz o Inferno de Dante à vida de uma forma nunca vista antes, mergulhando o jogador em reflexões profundas, batalhas épicas e paisagens de tirar o fôlego ao lado de seu personagem, onde as decisões influenciarão diretamente seu destino."
+  },
+  "team": {
+    "title": "Conheça nosso time",
+    "body": "Conheça os talentosos estudantes universitários por trás da Calcifire Studios.",
+    "prevSlide": "Membro anterior",
+    "nextSlide": "Próximo membro",
+    "dotLabel": "Ir para slide {n}"
+  },
+  "contact": {
+    "title": "Fale conosco",
+    "body": "Adoraríamos ouvir você. Entre em contato para qualquer dúvida.",
+    "email": "E-mail",
+    "phone": "Telefone"
+  },
+  "footer": {
+    "rights": "© 2026 Calcifire Studios. Todos os direitos reservados."
+  }
+}

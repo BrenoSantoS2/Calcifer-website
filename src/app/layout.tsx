@@ -1,17 +1,9 @@
-export const metadata = {
-  
-  title: 'Calcifer Studios',
-  description: 'Unleashing creativity and passion in every project',
-}
+import { ReactNode } from 'react';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  )
+type Props = {
+  children: ReactNode;
+};
+
+export default function RootLayout({ children }: Props) {
+  return children;
 }

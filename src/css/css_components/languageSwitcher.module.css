@@ -1,0 +1,107 @@
+.switcher {
+    position: relative;
+    display: inline-flex;
+}
+
+.trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid rgba(238, 158, 63, 0.4);
+    border-radius: 4px;
+    background: rgba(20, 20, 20, 0.4);
+    color: var(--Primary-Color, #EE9E3F);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 150ms ease, border-color 150ms ease;
+}
+
+.trigger:hover {
+    background: rgba(20, 20, 20, 0.65);
+    border-color: rgba(238, 158, 63, 0.7);
+}
+
+.trigger:focus-visible {
+    outline: 2px solid var(--Primary-Color, #EE9E3F);
+    outline-offset: 2px;
+}
+
+.flag {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.label {
+    letter-spacing: 0.04em;
+}
+
+.chevron {
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+.menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    min-width: 120px;
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(238, 158, 63, 0.25);
+    border-radius: 4px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    z-index: 120;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-family: Inter;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: left;
+    transition: background 120ms ease;
+}
+
+.item:hover {
+    background: rgba(238, 158, 63, 0.15);
+}
+
+.item:focus-visible {
+    outline: 2px solid var(--Primary-Color, #EE9E3F);
+    outline-offset: -2px;
+}
+
+.itemActive {
+    background: rgba(238, 158, 63, 0.22);
+    color: var(--Primary-Color, #EE9E3F);
+}
+
+/* Mobile variant — used inside the hamburger panel */
+.mobile .trigger {
+    font-size: 18px;
+    padding: 10px 18px;
+}
+
+.mobile .menu {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(100% + 8px);
+    top: auto;
+}

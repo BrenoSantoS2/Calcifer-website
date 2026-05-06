@@ -1,3 +1,9 @@
+:root {
+    --container-max: 1440px;
+    --container-padding: clamp(24px, 4vw, 80px);
+    --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 body {
     margin: 0px;
 }
@@ -75,5 +81,33 @@ html {
     }
     p {
         font-size: 1.5rem;
+    }
+}
+
+/* Locale fade transition (i18n switcher) */
+main.locale-content {
+    animation: locale_enter 250ms var(--ease-premium);
+}
+
+@keyframes locale_enter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body.locale-leaving main.locale-content {
+    opacity: 0;
+    transition: opacity 150ms var(--ease-premium);
+    animation: none;
+}
+
+/* Reduced motion: neutralize all animations and transitions */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

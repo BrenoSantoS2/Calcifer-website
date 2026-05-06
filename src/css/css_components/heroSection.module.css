@@ -1,12 +1,44 @@
-/* Layout do texto */
+/* Hero — full-bleed background, vertically centered content */
+.section {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Logo no Hero (visível apenas em mobile) */
+.hero_logo_mobile {
+  display: none;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .hero_logo_mobile {
+    display: flex;
+  }
+}
+
+/* Layout do texto — mesmo container central das outras sections */
 .text_layout {
-  margin: 64px;
-  padding-top: 100px;
-  max-width: 550px;
-  display: inline-flex;
+  max-width: var(--container-max);
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: var(--container-padding);
+  box-sizing: border-box;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+}
+
+.text_layout h1,
+.text_layout p {
+  max-width: 550px;
 }
 
 .text_layout h1 {
@@ -27,46 +59,102 @@
   z-index: -3;
 }
 
-.video_background {
+.video_parallax {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; 
+  height: 110%;
   z-index: -4;
+  will-change: transform;
+}
+
+.video_background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: video_fadein 600ms var(--ease-premium) forwards;
+}
+
+@keyframes video_fadein {
+  to { opacity: 1; }
+}
+
+/* Scroll indicator — minimal animated chevron at the bottom */
+.scroll_indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 200ms ease;
+}
+
+.scroll_indicator:hover {
+  opacity: 1;
+}
+
+.scroll_chevron {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  animation: scroll_bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll_bounce {
+  0%, 100% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(45deg) translate(6px, 6px);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll_chevron {
+    animation: none;
+  }
 }
 
 /* Media Queries para responsividade */
 
 /* Telas pequenas (celulares e tablets) */
 @media (max-width: 768px) {
-  .text_layout {
-    padding-top: 50px;
-      margin: 32px; /* Reduz margem em telas pequenas */
-      max-width: 400px; /* Permite que o texto ocupe mais espaço horizontal */
+  .text_layout h1,
+  .text_layout p {
+    max-width: 400px;
   }
 
   .text_layout p {
-      line-height: 1.5; /* Melhora a legibilidade */
+    line-height: 1.5;
   }
 }
 
 /* Telas muito grandes (ultra-wide) */
 @media (min-width: 1600px) {
-  .text_layout {
-      max-width: 700px !important; /* Força o uso do max-width em telas grandes */
-      margin: 80px auto; /* Centraliza e aumenta o espaçamento em telas grandes */
-      padding: 0 100px; /* Adiciona padding lateral em telas ultra-wide */
+  .text_layout h1,
+  .text_layout p {
+    max-width: 700px;
   }
 
   .text_layout h1 {
-      font-size: 4rem; /* Aumenta o tamanho do título em telas ultra-wide */
+    font-size: 4rem;
   }
 
   .text_layout p {
-      font-size: 1.5rem; /* Aumenta o tamanho do parágrafo para telas maiores */
-      line-height: 1.2; /* Ajusta o espaçamento entre linhas */
+    font-size: 1.5rem;
+    line-height: 1.2;
   }
 }
-

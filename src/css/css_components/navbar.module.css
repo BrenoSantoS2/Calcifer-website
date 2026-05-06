@@ -1,16 +1,46 @@
-/* Navbar styles */
+/* Navbar (desktop) */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transition:
+        transform 400ms var(--ease-premium),
+        opacity 400ms var(--ease-premium),
+        background 220ms ease,
+        backdrop-filter 220ms ease;
+    will-change: transform, opacity;
+}
+
+.navbar_inner {
     display: flex;
-    padding: 32px 64px;
+    padding-block: 24px 48px;
+    padding-inline: var(--container-padding);
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Limita o tamanho da navbar em telas grandes */
-    margin: 0 auto; /* Centraliza a navbar em telas maiores */
+    max-width: var(--container-max);
+    margin: 0 auto;
+    gap: 32px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar.scrolled {
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.95) 30%, rgba(20, 20, 20, 0.65) 70%, rgba(20, 20, 20, 0.0) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
 }
 
 .navbar_anchors {
-    position: relative;
-    top: -25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,39 +48,140 @@
 }
 
 .anchor {
+    position: relative;
     color: var(--Primary-Color, #EE9E3F);
     font-family: Inter;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
+    transition: color 150ms ease;
 }
-  
-  .anchor:hover {
-    color: #ff8838; /* Exemplo de mudança de cor ao passar o mouse */
-  }
-  
 
-/* Media Query para telas menores */
+.anchor::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--Primary-Color, #EE9E3F);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 220ms var(--ease-premium);
+}
+
+.anchor:hover {
+    color: #ff8838;
+}
+
+.anchor:hover::after,
+.anchor:focus-visible::after {
+    transform: scaleX(1);
+}
+
+/* Hamburger (mobile only) */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 110;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background: rgba(20, 20, 20, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.hamburgerBar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.hamburgerOpen .hamburgerBar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburgerOpen .hamburgerBar:nth-child(2) {
+    opacity: 0;
+}
+.hamburgerOpen .hamburgerBar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile panel */
+.mobile_panel {
+    position: fixed;
+    inset: 0;
+    z-index: 105;
+    background: rgba(15, 15, 15, 0.97);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 32px;
+    animation: slideDown 220ms ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-12px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.mobile_links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+.mobile_link {
+    color: var(--Primary-Color, #EE9E3F);
+    font-family: Inter;
+    font-size: 28px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.mobile_link:hover {
+    color: #ff8838;
+}
+
+.mobile_switcher {
+    margin-top: 16px;
+}
+
+/* Mobile breakpoint */
 @media (max-width: 768px) {
     .navbar {
-        padding: 16px; /* Reduz o padding em telas pequenas */
-        padding-top:32px ;
-        justify-content: center; /* Centraliza a logo */
+        display: none;
     }
 
-    .navbar_anchors {
-        display: none; /* Esconde os links em telas pequenas */
+    .hamburger {
+        display: flex;
     }
 }
 
-/* Media Query para telas muito grandes (ultra-wide) */
+/* Ultra-wide */
 @media (min-width: 1600px) {
-    .navbar {
-        max-width: 1400px; /* Limita ainda mais o tamanho da navbar em telas muito grandes */
-    }
-
     .navbar_anchors {
-        gap: 32px; /* Aumenta um pouco o espaçamento dos links */
+        gap: 32px;
     }
 }
