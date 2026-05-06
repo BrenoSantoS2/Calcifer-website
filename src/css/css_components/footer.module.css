@@ -1,10 +1,17 @@
 .footer {
     background: #393838;
     display: flex;
-    padding: 20px;
+    padding: 20px var(--container-padding);
     justify-content: center;
     align-items: center;
     align-self: stretch;
+}
+
+@media (min-width: 769px) {
+    .footer {
+        clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
+        margin-top: -3vh;
+    }
 }
 
 .text {

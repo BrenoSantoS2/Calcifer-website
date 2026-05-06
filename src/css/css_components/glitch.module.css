@@ -1,0 +1,17 @@
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+.glitching {
+    animation: glitch_main 200ms steps(4, end);
+}
+
+@keyframes glitch_main {
+    0%   { transform: translate(0, 0); filter: none; }
+    20%  { transform: translate(-2px, 1px); filter: hue-rotate(15deg); }
+    40%  { transform: translate(2px, -1px); filter: hue-rotate(-15deg); }
+    60%  { transform: translate(-1px, 0); filter: none; }
+    80%  { transform: translate(1px, 0); filter: hue-rotate(8deg); }
+    100% { transform: translate(0, 0); filter: none; }
+}

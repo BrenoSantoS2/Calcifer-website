@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "title": "Calcifire Studios",
+    "description": "Liberando creatividad y pasión en cada proyecto"
+  },
+  "nav": {
+    "games": "Juegos",
+    "about": "Acerca",
+    "contact": "Contacto",
+    "logoAlt": "Logo de Calcifire Studios",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "selectLanguage": "Seleccionar idioma"
+  },
+  "hero": {
+    "title": "Liberando creatividad y pasión en cada proyecto",
+    "body": "Bienvenido al mundo inmersivo de Calcifire Studios, donde los sueños de los videojuegos se hacen realidad. Únete a nosotros en una aventura épica llena de emoción, desafíos y posibilidades infinitas."
+  },
+  "about": {
+    "kicker": "Acerca de Nosotros",
+    "title": "Creando juegos que inspiran y entretienen",
+    "body": "Calcifire Studios es un estudio de videojuegos fundado por estudiantes universitarios con la misión de crear juegos cautivadores e innovadores que aporten alegría a jugadores de todo el mundo. Creemos en el poder de los juegos para inspirar y entretener, y estamos dedicados a ofrecer experiencias únicas e inmersivas."
+  },
+  "project": {
+    "title": "Falling in Abyss",
+    "tagAction": "Acción",
+    "tagMetroidvania": "MetroidVania",
+    "body": "Falling in Abyss trae el Infierno de Dante a la vida de una manera nunca antes vista, sumergiendo al jugador en reflexiones profundas, batallas épicas y paisajes impresionantes junto a su personaje, donde las decisiones influirán directamente en su destino."
+  },
+  "team": {
+    "title": "Conoce nuestro equipo",
+    "body": "Conoce a los talentosos estudiantes universitarios detrás de Calcifire Studios.",
+    "prevSlide": "Miembro anterior",
+    "nextSlide": "Siguiente miembro",
+    "dotLabel": "Ir al slide {n}"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "body": "Nos encantaría saber de ti. Contáctanos para cualquier consulta.",
+    "email": "Correo",
+    "phone": "Teléfono"
+  },
+  "footer": {
+    "rights": "© 2026 Calcifire Studios. Todos los derechos reservados."
+  }
+}

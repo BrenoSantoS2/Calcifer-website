@@ -2,33 +2,23 @@
 
 import "../css/style.css";
 import Styles from '../css/css_components/teamSection.module.css'
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from 'next/image'
+import { useTranslations } from "next-intl";
+
+const AUTOPLAY_INTERVAL = 5000;
+const CARD_GAP = 64;
 
 export function TeamSection() {
+    const t = useTranslations("team");
     const carrousel = useRef<HTMLDivElement>(null);
+    const [isPaused, setIsPaused] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-    const handleLeftClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        if (carrousel.current) {
-            const cardWidth = carrousel.current.querySelector('div')?.offsetWidth || 0;
-            carrousel.current.scrollLeft -= cardWidth + 64; // Desloca a largura do card + espaçamento (64px)
-        }
-    }
-
-    const handleRightClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        if (carrousel.current) {
-            const cardWidth = carrousel.current.querySelector('div')?.offsetWidth || 0;
-            carrousel.current.scrollLeft += cardWidth + 64; // Desloca a largura do card + espaçamento (64px)
-        }
-    }
-
-    // Aqui você pode definir os dados do time, tornando o processo de edição mais simples
     const teamMembers = [
         {
             name: 'Breno Santos',
-            role: 'Founder / Game Director',
+            role: 'Producer / Game Developer',
             imageSrc: '/time/BrenoSantos.png',
             linkedinUrl: 'https://www.linkedin.com/in/breno-santos-0843131b8/',
             instagramUrl: 'https://www.instagram.com/brenosantos_g/'
@@ -41,49 +31,119 @@ export function TeamSection() {
             instagramUrl: 'https://www.instagram.com/lucas.rjorge/'
         },
         {
-            name: 'Cibele Leal',
+            name: 'Yuri Mendes',
+            role: '2D Artist & Animator',
+            imageSrc: '/time/YuriMendes.png',
+            linkedinUrl: 'https://www.linkedin.com/in/yuri-mendes-899883235/',
+            instagramUrl: 'https://www.instagram.com/yuri.7th/'
+        },
+        {
+            name: 'Bruno Queiroz',
             role: 'Narrative Designer',
-            imageSrc: '/time/CibeleLeal.png',
-            linkedinUrl: 'https://www.linkedin.com/in/cibele-leal/',
-            instagramUrl: 'https://www.instagram.com/clea.figueredo/'
+            imageSrc: '/time/BrunoQueiroz.png',
+            linkedinUrl: 'https://www.linkedin.com/in/bruno-martins-queiroz/',
+            instagramUrl: 'https://www.instagram.com/bonnie_queiroz/'
         },
         {
-            name: 'João Victor',
-            role: 'Game Developer / Sound Designer',
-            imageSrc: '/time/JoaoVictor.png',
-            linkedinUrl: 'https://www.linkedin.com/in/joão-v-wandermurem/',
-            instagramUrl: 'https://www.instagram.com/wandermuremjoao/'
-        },
-        {
-            name: 'João Carbone',
-            role: 'Game Developer/ Game Designer',
-            imageSrc: '/time/JoaoCarbone.png',
-            linkedinUrl: 'https://www.linkedin.com/in/joao-carbone/',
+            name: 'Lauro Rosa',
+            role: '2D Artist & Animator',
+            imageSrc: '/time/LauroRosa.png',
+            linkedinUrl: 'https://www.linkedin.com/in/lauro-rosa-marques/',
             instagramUrl: ''
         },
         {
-            name: 'Leonardo Ogata',
-            role: 'Narrative Designer / Game Designer',
-            imageSrc: '/time/LeonardoOgata.png',
-            linkedinUrl: 'https://www.linkedin.com/in/leonardo-ogata-983b032b5/',
-            instagramUrl: 'https://www.instagram.com/leonardo_ogata/'
+            name: 'Felipe Correa',
+            role: '2D Artist & Animator',
+            imageSrc: '/time/FelipeCorrea.png',
+            linkedinUrl: 'https://www.linkedin.com/in/lipe-correa/',
+            instagramUrl: ''
         },
-        {
-            name: 'Leandro Santos',
-            role: 'Game Developer',
-            imageSrc: '/time/LeandroSantos.png',
-            linkedinUrl: 'https://www.linkedin.com/in/leandro-dos-santos-gomes/',
-            instagramUrl: 'https://www.instagram.com/leandro_dsag/'
-        },
-        // Adicione mais membros do time aqui
     ];
+
+    const getStep = () => {
+        const cardWidth = carrousel.current?.querySelector('div')?.offsetWidth || 0;
+        return cardWidth + CARD_GAP;
+    };
+
+    const goToIndex = (index: number) => {
+        if (!carrousel.current) return;
+        const step = getStep();
+        carrousel.current.scrollTo({ left: index * step, behavior: 'smooth' });
+    };
+
+    const handleLeftClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        if (!carrousel.current) return;
+        carrousel.current.scrollLeft -= getStep();
+    };
+
+    const handleRightClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        if (!carrousel.current) return;
+        carrousel.current.scrollLeft += getStep();
+    };
+
+    useEffect(() => {
+        const node = carrousel.current;
+        if (!node) return;
+        let frame = 0;
+
+        const onScroll = () => {
+            cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(() => {
+                const step = getStep();
+                if (step > 0) {
+                    setCurrentIndex(Math.round(node.scrollLeft / step));
+                }
+            });
+        };
+
+        node.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        onScroll();
+
+        return () => {
+            node.removeEventListener('scroll', onScroll);
+            window.removeEventListener('resize', onScroll);
+            cancelAnimationFrame(frame);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            if (reduced) setIsPaused(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (isPaused) return;
+        const node = carrousel.current;
+        if (!node) return;
+        const id = window.setInterval(() => {
+            const step = getStep();
+            if (!step) return;
+            const atEnd = node.scrollLeft + node.clientWidth >= node.scrollWidth - 4;
+            if (atEnd) {
+                node.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                node.scrollLeft += step;
+            }
+        }, AUTOPLAY_INTERVAL);
+        return () => window.clearInterval(id);
+    }, [isPaused]);
 
     return (
         <section>
-            <div className={Styles.teamSection}>
+            <div
+                className={Styles.teamSection}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+            >
                 <div className={Styles.text}>
-                    <h1 className={Styles.text_center}>Meet Our Team</h1>
-                    <p className={Styles.text_center}>Get to know the talented university students behind Calcifer Studios.</p>
+                    <h1 className={Styles.text_center}>{t("title")}</h1>
+                    <p className={Styles.text_center}>{t("body")}</p>
                 </div>
                 <div className={Styles.cards} ref={carrousel}>
                     {teamMembers.map((member, index) => (
@@ -97,9 +157,24 @@ export function TeamSection() {
                         />
                     ))}
                 </div>
+                <div className={Styles.dots} role="tablist">
+                    {teamMembers.map((_, index) => {
+                        const isActive = index === currentIndex;
+                        return (
+                            <button
+                                key={index}
+                                type="button"
+                                className={`${Styles.dot} ${isActive ? Styles.dotActive : ''}`}
+                                aria-label={t("dotLabel", { n: index + 1 })}
+                                aria-current={isActive ? 'true' : undefined}
+                                onClick={() => goToIndex(index)}
+                            />
+                        );
+                    })}
+                </div>
                 <div className={Styles.chevrons}>
-                    <button onClick={handleLeftClick}><Image src="/chevron.svg" alt="chevron" width="36" height="36" /></button>
-                    <button onClick={handleRightClick}><Image src="/chevron.svg" alt="chevron" width="36" height="36" /></button>
+                    <button onClick={handleLeftClick} aria-label={t("prevSlide")}><Image src="/chevron.svg" alt="" width="36" height="36" /></button>
+                    <button onClick={handleRightClick} aria-label={t("nextSlide")}><Image src="/chevron.svg" alt="" width="36" height="36" /></button>
                 </div>
             </div>
         </section>

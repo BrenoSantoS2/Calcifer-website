@@ -1,20 +1,60 @@
 .text {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container-max);
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: var(--container-padding);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    align-self: stretch;
 }
 
 .cards {
+    position: relative;
+    z-index: 1;
     display: flex;
-    justify-content: center; /* Alinha os cards ao centro */
-    gap: 64px; /* Espaçamento entre os cards */
+    justify-content: center;
+    gap: 64px;
     align-items: center;
     align-self: stretch;
-    overflow-x: auto; /* Permite rolar horizontalmente */
-    scroll-behavior: smooth; /* Rolagem suave */
-    padding-left: calc(50vw - 200px - 32px); /* Ajusta o espaçamento à esquerda para centralizar o primeiro card */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-inline: var(--container-padding);
+    scroll-padding-inline: var(--container-padding);
+    box-sizing: border-box;
+    scroll-snap-type: x mandatory;
+}
+
+@media (max-width: 768px) {
+    .cards {
+        justify-content: flex-start;
+        gap: 0;
+        padding-inline: 0;
+        scroll-padding-inline: 0;
+    }
+}
+
+.cards > * {
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    transition: transform 200ms var(--ease-premium), box-shadow 200ms var(--ease-premium);
+}
+
+@media (max-width: 768px) {
+    .cards > * {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.cards > *:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .cards::-webkit-scrollbar {
@@ -28,7 +68,7 @@
     justify-content: center;
     align-items: center;
     background-color: #f55555;
-    border-radius: 30px;
+    border-radius: 4px;
 }
 
 .h2 {
@@ -58,10 +98,12 @@
 }
 
 .teamSection {
+    position: relative;
     display: flex;
-    height: 100%;
-    padding: 64px;
+    min-height: 70svh;
+    padding: 64px 0;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 25px;
     align-self: stretch;
@@ -76,6 +118,34 @@
     background-color: transparent;
     border: none;
 }
+
+.dots {
+    display: flex;
+    gap: 8px;
+    padding-top: 12px;
+    justify-content: center;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.25);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 200ms var(--ease-premium), transform 200ms var(--ease-premium);
+}
+
+.dot:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.dotActive {
+    background: rgba(0, 0, 0, 0.85);
+    transform: scale(1.2);
+}
+
 .chevrons {
     display: flex;
     padding-top: 16px;
@@ -91,17 +161,17 @@
     transform: rotate(180deg);
 }
 
-@media (max-width: 425px){
-    .media{
+@media (max-width: 425px) {
+    .media {
         justify-content: center;
     }
-    .teamSection{
-        padding: 32px;
+    .teamSection {
+        padding: 32px 0;
     }
 }
 
-@media (max-width: 370px){
-    .image{
+@media (max-width: 370px) {
+    .image {
         width: 150px;
         height: 150px;
     }

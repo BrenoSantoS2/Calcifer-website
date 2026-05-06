@@ -1,74 +1,95 @@
 .about_section {
     background-color: rgb(255, 255, 255);
     display: flex;
-    min-height: 100%;
-    padding: 64px;
-    justify-content: left;
+    min-height: 70svh;
+    padding: 64px 0;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
 }
+
+.title_layout h3 {
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.title_layout h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--Primary-Color, #EE9E3F);
+    transition: width 350ms var(--ease-premium);
+    transition-delay: 200ms;
+}
+
+.in_view .title_layout h3::after {
+    width: 64px;
+}
+
 .content {
-    min-width: 100%;
+    max-width: var(--container-max);
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: var(--container-padding);
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 32px;
 }
 
 .text_layout {
-    margin: 64px;
-    padding-top: 100px; /* Mantém o padding superior */
-    max-width: 550px; /* Tamanho máximo padrão */
-    display: flex; /* Muda para flex para manter a organização */
+    max-width: 550px;
+    display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinha à esquerda */
-    gap: 16px; /* Espaçamento entre elementos */
+    align-items: flex-start;
+    gap: 16px;
 }
 
 .text_position {
     position: relative;
     top: 10px;
     max-width: 450px;
-    padding: 0 20px; /* Adiciona padding lateral ao texto */
 }
 
 @media (max-width: 1000px) {
-    .content{
+    .content {
         flex-direction: column;
         gap: 1rem;
     }
 
     .text_position {
         max-width: 100%;
-        padding: 0px;
+        padding: 0;
     }
 }
+
 /* Telas pequenas (celulares e tablets) */
 @media (max-width: 768px) {
     .about_section {
-        padding: 48px 32px; /* Reduz o padding em telas pequenas */
-        min-height: 300px; /* Ajusta a altura mínima */
+        padding: 48px 0;
+        min-height: 60svh;
     }
 
     .text_layout {
-        padding-top: 50px; /* Reduz padding superior */
-        margin: 24px; /* Reduz margem em telas pequenas */
-        max-width: 400px; /* Permite que o texto ocupe mais espaço horizontal */
+        max-width: 400px;
     }
 }
 
 /* Telas muito grandes (ultra-wide) */
 @media (min-width: 1600px) {
     .about_section {
-        padding: 80px; /* Aumenta o padding em telas grandes */
+        padding: 80px 0;
     }
 
     .text_layout {
-        max-width: 700px; /* Força o uso do max-width em telas grandes */
-        margin: 80px auto; /* Centraliza e aumenta o espaçamento em telas grandes */
-        padding: 0 100px; /* Adiciona padding lateral em telas ultra-wide */
-    }
-    .text_position{
         max-width: 700px;
-        padding: 0px;
+    }
+
+    .text_position {
+        max-width: 700px;
     }
 }
